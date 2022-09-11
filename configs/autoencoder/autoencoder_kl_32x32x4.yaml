@@ -29,13 +29,16 @@ data:
     batch_size: 12
     wrap: True
     train:
-      target: ldm.data.imagenet.ImageNetSRTrain
+      target: ldm.data.imagenet.Local
       params:
+        source_mather: /content/*.jpg
         size: 256
         degradation: pil_nearest
     validation:
-      target: ldm.data.imagenet.ImageNetSRValidation
+      target: ldm.data.imagenet.Local
       params:
+        source_mather: /content/*.jpg
+        limit: 100
         size: 256
         degradation: pil_nearest
 
